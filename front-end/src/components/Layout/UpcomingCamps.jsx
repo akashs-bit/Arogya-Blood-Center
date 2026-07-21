@@ -78,7 +78,7 @@ const UpcomingCamps = () => {
       setLoading(true);
       setError("");
 
-      const { data } = await axios.get("http://localhost:5000/api/camps/all");
+      const { data } = await axios.get("https://arogya-blood-center.onrender.com/api/camps/all");
 
       setCamps(Array.isArray(data?.camps) ? data.camps : []);
     } catch (err) {

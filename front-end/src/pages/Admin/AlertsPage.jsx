@@ -50,12 +50,12 @@ const AlertsPage = () => {
   const fetchAlertsData = async () => {
     try {
       setLoading(true);
-      let url = `http://localhost:5000/api/alerts?search=${searchQuery}`;
+      let url = `https://arogya-blood-center.onrender.com/api/alerts?search=${searchQuery}`;
       if (selectedType) url += `&type=${selectedType}`;
 
       const [alertsRes, statsRes] = await Promise.all([
         axios.get(url),
-        axios.get("http://localhost:5000/api/alerts/stats"),
+        axios.get("https://arogya-blood-center.onrender.com/api/alerts/stats"),
       ]);
 
       if (alertsRes.data.success) setAlerts(alertsRes.data.alerts);
@@ -134,11 +134,11 @@ const AlertsPage = () => {
 
       if (editingAlertId) {
         await axios.put(
-          `http://localhost:5000/api/alerts/${editingAlertId}`,
+          `https://arogya-blood-center.onrender.com/api/alerts/${editingAlertId}`,
           formattedData,
         );
       } else {
-        await axios.post("http://localhost:5000/api/alerts", formattedData);
+        await axios.post("https://arogya-blood-center.onrender.com/api/alerts", formattedData);
       }
 
       setIsModalOpen(false);
@@ -160,7 +160,7 @@ const AlertsPage = () => {
     try {
       setLoading(true);
       const res = await axios.delete(
-        `http://localhost:5000/api/alerts/${deleteTarget._id}`
+        `https://arogya-blood-center.onrender.com/api/alerts/${deleteTarget._id}`
       );
       if (res.data.success) {
         setDeleteTarget(null);

@@ -77,7 +77,7 @@ const RegisterDonor = () => {
       const { confirmPassword, consent, ...payload } = formData;
 
       const { data } = await axios.post(
-        "http://localhost:5000/api/auth/register",
+        "https://arogya-blood-center.onrender.com/api/auth/register",
         payload,
       );
 

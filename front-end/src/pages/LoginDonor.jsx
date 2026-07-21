@@ -50,7 +50,7 @@ const LoginDonor = () => {
       setLoading(true);
 
       const { data } = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "https://arogya-blood-center.onrender.com/api/auth/login",
         {
           identifier: formData.identifier,
           password: formData.password,

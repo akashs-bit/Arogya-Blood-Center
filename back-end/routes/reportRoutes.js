@@ -29,7 +29,7 @@ router.post("/generate", async (req, res) => {
       }),
       status: "Generated",
       // Point this to your actual backend server port file stream 👇
-      downloadUrl: `http://localhost:5000/api/reports/download/${randomId}`,
+      downloadUrl: `https://arogya-blood-center.onrender.com/api/reports/download/${randomId}`,
     });
 
     await newReport.save();

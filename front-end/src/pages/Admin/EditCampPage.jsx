@@ -131,7 +131,7 @@ const EditCampPage = () => {
       try {
         setLoading(true);
 
-        const { data } = await axios.get("http://localhost:5000/api/camps/all");
+        const { data } = await axios.get("https://arogya-blood-center.onrender.com/api/camps/all");
         const camps = Array.isArray(data?.camps) ? data.camps : [];
         const camp = camps.find((item) => item._id.toString() === id.toString());
 
@@ -206,7 +206,7 @@ const EditCampPage = () => {
       };
 
       const { data } = await axios.put(
-        `http://localhost:5000/api/camps/${id}`,
+        `https://arogya-blood-center.onrender.com/api/camps/${id}`,
         payload,
         {
           headers: {

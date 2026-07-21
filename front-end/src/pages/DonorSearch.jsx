@@ -26,7 +26,7 @@ const DonorSearch = () => {
       setLoading(true);
 
       const { data } = await axios.get(
-        "http://localhost:5000/api/donors/search",
+        "https://arogya-blood-center.onrender.com/api/donors/search",
         {
           params: {
             search,

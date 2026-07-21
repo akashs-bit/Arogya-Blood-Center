@@ -90,7 +90,7 @@ const RegisterCamps = () => {
       };
 
       const { data } = await axios.post(
-        "http://localhost:5000/api/camps/register-camp",
+        "https://arogya-blood-center.onrender.com/api/camps/register-camp",
         payload,
         {
           headers: {

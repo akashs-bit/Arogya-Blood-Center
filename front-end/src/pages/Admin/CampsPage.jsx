@@ -104,7 +104,7 @@ const CampsPage = () => {
   const fetchCamps = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get("http://localhost:5000/api/camps/all");
+      const { data } = await axios.get("https://arogya-blood-center.onrender.com/api/camps/all");
       setCamps(Array.isArray(data?.camps) ? data.camps : []);
     } catch (error) {
       console.log(error);
@@ -186,7 +186,7 @@ const CampsPage = () => {
       };
 
       const { data } = await axios.post(
-        "http://localhost:5000/api/camps/create",
+        "https://arogya-blood-center.onrender.com/api/camps/create",
         payload,
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -216,7 +216,7 @@ const CampsPage = () => {
       const token = localStorage.getItem("token");
 
       const { data } = await axios.delete(
-        `http://localhost:5000/api/camps/${selectedCampId}`,
+        `https://arogya-blood-center.onrender.com/api/camps/${selectedCampId}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         },

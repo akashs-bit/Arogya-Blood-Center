@@ -59,7 +59,7 @@ const DonorsPage = () => {
       setLoading(true);
       const token = localStorage.getItem("token");
 
-      const { data } = await axios.get("http://localhost:5000/api/donors/all", {
+      const { data } = await axios.get("https://arogya-blood-center.onrender.com/api/donors/all", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -86,7 +86,7 @@ const DonorsPage = () => {
       const token = localStorage.getItem("token");
 
       const { data } = await axios.delete(
-        `http://localhost:5000/api/donors/delete/${selectedDonorId}`,
+        `https://arogya-blood-center.onrender.com/api/donors/delete/${selectedDonorId}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 

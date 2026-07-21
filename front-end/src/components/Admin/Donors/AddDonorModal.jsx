@@ -84,7 +84,7 @@ const AddDonorModal = ({ open, setOpen, fetchDonors }) => {
       };
 
       const response = await axios.post(
-        "http://localhost:5000/api/donors/create",
+        "https://arogya-blood-center.onrender.com/api/donors/create",
         payload,
         {
           headers: {

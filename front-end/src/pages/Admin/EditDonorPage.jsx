@@ -46,7 +46,7 @@ const EditDonorPage = () => {
       const token = localStorage.getItem("token");
 
       const { data } = await axios.get(
-        `http://localhost:5000/api/donors/${id}`,
+        `https://arogya-blood-center.onrender.com/api/donors/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -94,7 +94,7 @@ const EditDonorPage = () => {
       const token = localStorage.getItem("token");
 
       const { data } = await axios.put(
-        `http://localhost:5000/api/donors/update/${id}`,
+        `https://arogya-blood-center.onrender.com/api/donors/update/${id}`,
         formData,
         {
           headers: {

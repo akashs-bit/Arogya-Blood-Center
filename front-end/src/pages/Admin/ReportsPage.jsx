@@ -38,12 +38,12 @@ const ReportsPage = () => {
   const fetchReportSuiteData = async () => {
     try {
       setLoading(true);
-      let listUrl = `http://localhost:5000/api/reports?search=${searchQuery}`;
+      let listUrl = `https://arogya-blood-center.onrender.com/api/reports?search=${searchQuery}`;
       if (selectedType !== "All") listUrl += `&type=${selectedType}`;
 
       const [listRes, analyticsRes] = await Promise.all([
         axios.get(listUrl),
-        axios.get("http://localhost:5000/api/reports/analytics"),
+        axios.get("https://arogya-blood-center.onrender.com/api/reports/analytics"),
       ]);
 
       if (listRes.data.success) setReports(listRes.data.reports);
@@ -63,7 +63,7 @@ const ReportsPage = () => {
     try {
       setExporting(true);
       const response = await axios.post(
-        "http://localhost:5000/api/reports/generate",
+        "https://arogya-blood-center.onrender.com/api/reports/generate",
         {
           type: selectedType === "All" ? "Donations" : selectedType,
         },

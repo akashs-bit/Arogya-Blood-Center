@@ -32,7 +32,7 @@ const ViewAllCamps = () => {
   const fetchCamps = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get("http://localhost:5000/api/camps/all");
+      const { data } = await axios.get("https://arogya-blood-center.onrender.com/api/camps/all");
       setCamps(data?.camps || []);
     } catch (error) {
       console.log(error);
@@ -67,7 +67,7 @@ const ViewAllCamps = () => {
 
     try {
       setDeletingId(id);
-      await axios.delete(`http://localhost:5000/api/camps/${id}`, {
+      await axios.delete(`https://arogya-blood-center.onrender.com/api/camps/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       toast.success("Camp deleted successfully");
