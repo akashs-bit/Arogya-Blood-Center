@@ -25,7 +25,6 @@
 * 🏥 **Camp Operations:** Blood Donation Camp scheduling and management
 * 📊 **Admin Dashboard:** Centralized view for inventory and donor statistics
 * 🔍 **Search & Filter:** Find donors quickly by blood group and location
-* ☁️ **Media Uploads:** Cloudinary integration for profile image handling
 * 📧 **Notifications:** Email alerts via Nodemailer
 * 📱 **Responsive UI:** Modern, mobile-first design powered by Tailwind CSS
 
