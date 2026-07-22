@@ -47,13 +47,6 @@ A modern **Full Stack MERN Blood Bank Management System** that helps manage bloo
 
 ---
 
-## 📂 Folder Structure
-
-```
-client/
-server/
-README.md
-```
 
 ---
 
