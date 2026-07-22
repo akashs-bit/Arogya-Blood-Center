@@ -1,52 +1,87 @@
-<div align="center">
-
 # 🩸 Arogya Blood Center
 
-### *A Full-Stack MERN Platform for Digitalizing Blood Bank Operations & Donation Camps*
-
-[![Live Demo](https://img.shields.io/badge/Demo-Live%20Website-brightgreen?style=for-the-badge&logo=vercel)](https://arogya-blood-center.vercel.app)
-[![React](https://img.shields.io/badge/Frontend-React%20%2B%20Vite-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
-[![Node.js](https://img.shields.io/badge/Backend-Node.js%20%2B%20Express-green?style=for-the-badge&logo=node.js)](https://nodejs.org/)
-[![MongoDB](https://img.shields.io/badge/Database-MongoDB%20Atlas-darkgreen?style=for-the-badge&logo=mongodb)](https://www.mongodb.com/)
-[![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
-
-</div>
+> A modern, production-ready **Full-Stack MERN Blood Bank & Donor Management System** built to bridge the gap between blood donors, emergency hospital requests, and donation camp organizers in real-time.
 
 ---
 
-## 📌 Table of Contents
-- [Overview](#-overview)
-- [System Architecture](#-system-architecture)
-- [Key Features](#-key-features)
-- [Tech Stack](#-tech-stack)
-- [API Endpoints Overview](#-api-endpoints-overview)
-- [Project Structure](#-project-structure)
-- [Getting Started](#-getting-started)
-- [Environment Variables](#-environment-variables)
-- [Future Roadmap](#-future-roadmap)
-- [Author](#-author)
+## 🌐 Quick Links
+
+* 🚀 **Live Application:** [arogya-blood-center.vercel.app](https://arogya-blood-center.vercel.app)
+* 👨‍💻 **Developer:** Akash Sb (*MERN Stack Developer*)
 
 ---
 
-## 📖 Overview
+## ✨ Key System Features
 
-**Arogya Blood Center** is a secure, end-to-end MERN stack solution built to streamline blood bank logistics, donor scheduling, and inventory tracking. It bridges the gap between voluntary blood donors and administrative coordinators by providing automated email notifications, real-time inventory monitoring, and camp management.
+### 👤 User & Donor Experience
+* 🔐 **Secure Authentication:** JWT-driven authorization, password hashing with `bcryptjs`, and protected React Router routes.
+* 🩸 **Smart Donor Management:** Register, update, and manage donor profiles with built-in 90-day cooldown eligibility calculations.
+* 🔍 **Real-Time Stock & Donor Search:** Filter available donors and blood bags ($A+$, $B+$, $O-$, etc.) dynamically by location and blood group.
+* 🏥 **Donation Camp Booking:** Browse upcoming donation drives, view camp details, and register directly online.
 
-> 💡 **Why this exists:** Traditional blood bank processes rely heavily on manual logs, leading to coordination delays during emergency shortages. Arogya digitizes the entire lifecycle—from donor registration to camp scheduling and stock updates.
+### 🛡️ Admin & Operational Controls
+* 📊 **Interactive Admin Dashboard:** Unified overview of blood stock levels, registered donors, and active camp drives.
+* ⚠️ **Inventory Status Tracking:** Visual alert system indicating stock status (`CRITICAL`, `LOW`, `STABLE`) based on available unit thresholds.
+* ☁️ **Cloud Media Storage:** Direct profile image and verification uploads handled via **Multer** & **Cloudinary**.
+* 📧 **Email Notifications:** Automated confirmation emails dispatches powered by **Nodemailer**.
 
 ---
 
-## 🏗️ System Architecture
+## 🛠️ Tech Stack Architecture
 
 ```text
-  ┌─────────────────┐       HTTPS / REST API        ┌──────────────────┐
-  │   React + Vite  │ ────────────────────────────> │  Express Server  │
-  │  (Vercel Host)  │ <──────────────────────────── │  (Render Host)   │
-  └─────────────────┘                               └────────┬─────────┘
-                                                             │
-                                        ┌────────────────────┼────────────────────┐
-                                        │                    │                    │
-                                 ┌──────▼──────┐      ┌──────▼──────┐      ┌──────▼──────┐
-                                 │   MongoDB   │      │  Nodemailer │      │  Node-Cron  │
-                                 │   Atlas     │      │   (Gmail)   │      │ (Reminders) │
-                                 └─────────────┘      └─────────────┘      └─────────────┘
+[ Client: React + Vite + Tailwind CSS ] 
+                 │
+            REST API (Axios)
+                 │
+                 ▼
+[ Server: Node.js + Express.js ]
+   ├── JWT & bcryptjs (Auth)
+   ├── Multer + Cloudinary (Image Hosting)
+   └── Nodemailer (Email Dispatch)
+                 │
+                 ▼
+[ Database: MongoDB Atlas + Mongoose ]
+
+⚙️ Quick Local Setup
+
+# 1. Clone the repository
+git clone [https://github.com/your-username/Arogya-Blood-Center.git](https://github.com/your-username/Arogya-Blood-Center.git)
+cd Arogya-Blood-Center
+
+# 2. Setup & Run Frontend
+cd client
+npm install
+npm run dev
+
+# 3. Setup & Run Backend (in a separate terminal)
+cd ../server
+npm install
+npm run dev
+
+
+🔑 Server Environment Variables (server/.env)
+
+PORT=5000
+MONGO_URI=your_mongodb_atlas_uri
+JWT_SECRET=your_jwt_secret_key
+CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+EMAIL_USER=your_email@gmail.com
+EMAIL_PASS=your_email_app_password
+
+
+📂 Repository Structure
+Arogya-Blood-Center/
+├── client/          # React.js Frontend (Vite, Tailwind, Axios)
+├── server/          # Node.js + Express.js Backend (Controllers, Models, Routes)
+└── README.md        # Project Documentation
+
+
+👨‍💻 Developed By
+Akash Sb
+
+MERN Stack Developer
+
+⭐ If you find this project useful, don't forget to star the repository!
