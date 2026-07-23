@@ -10,15 +10,12 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { useEffect, useState } from "react";
-
 import axios from "axios";
 
 const DonorSearch = () => {
   const [donors, setDonors] = useState([]);
-
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
-
   const [bloodGroup, setBloodGroup] = useState("");
 
   const fetchDonors = async () => {
@@ -51,7 +48,6 @@ const DonorSearch = () => {
     <section className="relative min-h-screen overflow-hidden bg-[#fafafa] pt-6 sm:pt-8 lg:pt-10 pb-16">
       {/* Background Blur */}
       <div className="absolute left-0 top-0 h-[320px] w-[320px] rounded-full bg-red-200/20 blur-3xl"></div>
-
       <div className="absolute bottom-0 right-0 h-[320px] w-[320px] rounded-full bg-red-300/20 blur-3xl"></div>
 
       {/* MAIN CONTAINER */}
@@ -114,9 +110,7 @@ const DonorSearch = () => {
               {/* STATS */}
               <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
                 <StatCard number="10K+" text="Registered Donors" />
-
                 <StatCard number="24/7" text="Emergency Support" />
-
                 <StatCard number="100%" text="Verified Data" />
               </div>
             </div>
@@ -154,7 +148,6 @@ const DonorSearch = () => {
           </div>
         </div>
 
-        {/* ================= DONOR LIST ================= */}
         {/* ================= DONOR LIST (PREMIUM TABLE VIEW) ================= */}
         <div className="mt-12">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-8">
@@ -240,9 +233,12 @@ const DonorSearch = () => {
                         </div>
                       </td>
                       <td className="px-8 py-5 text-center">
-                        <button className="bg-slate-900 hover:bg-red-700 text-white text-[11px] font-bold px-5 py-2.5 rounded-xl transition-all hover:scale-105 active:scale-95 shadow-lg shadow-slate-200">
+                        <a
+                          href={`tel:${donor.phone}`}
+                          className="inline-block bg-slate-900 hover:bg-red-700 text-white text-[11px] font-bold px-5 py-2.5 rounded-xl transition-all hover:scale-105 active:scale-95 shadow-lg shadow-slate-200 no-underline"
+                        >
                           CONTACT
-                        </button>
+                        </a>
                       </td>
                     </tr>
                   ))}
@@ -251,6 +247,7 @@ const DonorSearch = () => {
             </div>
           </div>
         </div>
+
         {/* EMPTY STATE */}
         {!loading && donors.length === 0 && (
           <div className="mt-10 rounded-[28px] bg-white p-10 text-center shadow-sm">
@@ -278,7 +275,6 @@ const StatCard = ({ number, text }) => {
   return (
     <div className="rounded-[24px] border border-white/10 bg-white/10 p-5 backdrop-blur-xl transition duration-300 hover:-translate-y-2">
       <h3 className="text-3xl font-black text-white">{number}</h3>
-
       <p className="mt-2 text-sm font-medium text-red-50">{text}</p>
     </div>
   );
