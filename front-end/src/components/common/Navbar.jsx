@@ -111,12 +111,12 @@ const Navbar = () => {
                   : "invisible translate-y-2 opacity-0"
               }`}
             >
-              <DropdownLink
+              {/* <DropdownLink
                 to="/camps"
                 icon={<UserRoundPlus size={16} />}
                 text="Register Camps"
                 onClick={closeAllMenus}
-              />
+              /> */}
 
               <DropdownLink
                 to="/search-donor"
@@ -206,11 +206,11 @@ const Navbar = () => {
           <div className="grid gap-1">
             <MobileLink to="/" text="Home" onClick={closeAllMenus} />
 
-            <MobileLink
+            {/* <MobileLink
               to="/register-camps"
               text="Register Camps"
               onClick={closeAllMenus}
-            />
+            /> */}
 
             <MobileLink
               to="/search-donor"
