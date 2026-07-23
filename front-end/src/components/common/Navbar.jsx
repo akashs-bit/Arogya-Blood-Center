@@ -224,11 +224,11 @@ const Navbar = () => {
               onClick={closeAllMenus}
             />
 
-            <MobileLink
+            {/* <MobileLink
               to="/blood-stock"
               text="Blood Stock"
               onClick={closeAllMenus}
-            />
+            /> */}
 
             <MobileLink to="/camps" text="Camps" onClick={closeAllMenus} />
 
